@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9ff;
+        }
+        .sidebar-active {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#0d1c2f",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#131b2e",
+                    "surface": "#f8f9ff",
+                    "on-tertiary-fixed-variant": "#444749",
+                    "primary-fixed": "#dae2fd",
+                    "background": "#f8f9ff",
+                    "on-surface-variant": "#45464d",
+                    "on-surface": "#0b1c30",
+                    "surface-tint": "#565e74",
+                    "tertiary-fixed": "#e0e3e5",
+                    "surface-variant": "#d3e4fe",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-container": "#7c839b",
+                    "secondary-fixed-dim": "#b9c7e0",
+                    "surface-container": "#e5eeff",
+                    "outline-variant": "#c6c6cd",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#191c1e",
+                    "primary-container": "#131b2e",
+                    "primary": "#000000",
+                    "surface-bright": "#f8f9ff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-background": "#0b1c30",
+                    "secondary": "#515f74",
+                    "on-tertiary-fixed": "#191c1e",
+                    "secondary-fixed": "#d5e3fd",
+                    "error": "#ba1a1a",
+                    "tertiary": "#000000",
+                    "on-tertiary-container": "#818486",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#3a485c",
+                    "primary-fixed-dim": "#bec6e0",
+                    "surface-container-low": "#eff4ff",
+                    "inverse-primary": "#bec6e0",
+                    "tertiary-fixed-dim": "#c4c7c9",
+                    "surface-container-high": "#dce9ff",
+                    "secondary-container": "#d5e3fd",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#57657b",
+                    "outline": "#76777d",
+                    "surface-dim": "#cbdbf5",
+                    "inverse-surface": "#213145"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "0.5rem",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "32px",
+                    "xl": "4rem",
+                    "sm": "1rem",
+                    "md": "1.5rem",
+                    "lg": "2.5rem",
+                    "gutter": "24px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Manrope"],
+                    "display-xl": ["Manrope"],
+                    "body-sm": ["Inter"],
+                    "headline-md": ["Manrope"],
+                    "body-lg": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.25", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="text-on-surface overflow-x-hidden">
+<!-- SideNavBar Anchor -->
+<aside class="fixed left-0 top-0 h-screen w-72 flex flex-col bg-surface-container dark:bg-surface-container-low shadow-sm dark:shadow-none z-50">
+<div class="px-6 py-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">domain</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface">CondoPro</h1>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Management Portal</p>
+</div>
+</div>
+</div>
+<nav class="flex flex-col gap-1 py-6 flex-grow">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg mx-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-md text-body-md font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg mx-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-body-md text-body-md font-medium">Users</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg mx-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="apartment">apartment</span>
+<span class="font-body-md text-body-md font-medium">Apartments</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg mx-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-body-md text-body-md font-medium">Payments</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary dark:bg-primary-fixed text-on-primary dark:text-on-primary-fixed rounded-lg mx-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined sidebar-active" data-icon="person_add">person_add</span>
+<span class="font-body-md text-body-md font-medium">Visitors</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg mx-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="event_seat">event_seat</span>
+<span class="font-body-md text-body-md font-medium">Amenities</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg mx-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+<span class="font-body-md text-body-md font-medium">Tickets</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg mx-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md font-medium">Settings</span>
+</a>
+</nav>
+<div class="p-6">
+<button class="w-full py-4 bg-primary text-on-primary rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined">add</span>
+                New Request
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-72 min-h-screen">
+<!-- TopAppBar Anchor -->
+<header class="sticky top-0 w-full h-16 flex items-center z-40 bg-surface dark:bg-surface-dim border-b border-outline-variant/30 px-margin-desktop justify-between">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full text-body-sm focus:ring-2 focus:ring-primary/20" placeholder="Search visitors, plates, or apartments..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high p-2 rounded-full transition-all">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high p-2 rounded-full transition-all">help_outline</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high p-2 rounded-full transition-all">chat_bubble</button>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<div class="flex items-center gap-3 cursor-pointer">
+<div class="text-right hidden lg:block">
+<p class="text-body-sm font-bold leading-none">Carlos Mendoza</p>
+<p class="text-label-caps text-on-surface-variant">Chief Warden</p>
+</div>
+<img alt="Manager Avatar" class="w-10 h-10 rounded-full object-cover border-2 border-primary-fixed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCklMrO04bu_gfB8xy3o55q-aSO_VS1ck1J9OWVa_Rpx40AE5TszhYs08eTgy1JO7pWZdNSqJjvQ9Tji8Ipt0adWF5JGLAFrGwuLd8vWoWNB0mD7WW6l9AYsrwice1OPXXAi0QEPEZsM1pZYkpPa9gXr3BkNxJdYK0JMBJ5mXDe4wtV_BdUgVNFlpTOlN_RbW8FBdKCOXMb49d0VX69cGqAjNjT77AC05UrJT1rNAgN-l1Pu485go-aPG5wJj1CGIG6SBmynzWrRzs"/>
+</div>
+</div>
+</header>
+<div class="p-margin-desktop">
+<!-- Header Section -->
+<div class="mb-lg flex justify-between items-end">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Gestión de Visitantes</h2>
+<p class="text-body-md text-on-surface-variant">Control de acceso en tiempo real y registro histórico de ingresos.</p>
+</div>
+<div class="flex gap-3">
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-highest rounded-lg">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<span class="text-body-sm font-bold text-on-surface">12 Activos</span>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Registration Form Card -->
+<div class="col-span-12 xl:col-span-4 bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-6">
+<div class="p-2 bg-primary-fixed text-on-primary-fixed rounded-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">how_to_reg</span>
+</div>
+<h3 class="font-headline-md text-body-lg font-bold">Registrar Nuevo Visitante</h3>
+</div>
+<form class="space-y-4">
+<div class="space-y-1">
+<label class="text-label-caps text-on-surface-variant px-1">Nombre Completo</label>
+<input class="w-full px-4 py-3 bg-surface border border-outline-variant rounded-lg focus:border-primary focus:ring-0 transition-all text-body-md" placeholder="Ej: Roberto Jimenez" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="text-label-caps text-on-surface-variant px-1">Documento</label>
+<input class="w-full px-4 py-3 bg-surface border border-outline-variant rounded-lg focus:border-primary focus:ring-0 transition-all text-body-md" placeholder="ID / CC" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="text-label-caps text-on-surface-variant px-1">Placa Vehículo</label>
+<input class="w-full px-4 py-3 bg-surface border border-outline-variant rounded-lg focus:border-primary focus:ring-0 transition-all text-body-md" placeholder="ABC-123" type="text"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="text-label-caps text-on-surface-variant px-1">Apartamento Destino</label>
+<select class="w-full px-4 py-3 bg-surface border border-outline-variant rounded-lg focus:border-primary focus:ring-0 transition-all text-body-md appearance-none">
+<option>Torre A - Apt 402</option>
+<option>Torre A - Apt 501</option>
+<option>Torre B - Apt 204</option>
+<option>Torre C - Apt 1102</option>
+</select>
+</div>
+<div class="pt-4">
+<button class="w-full py-4 bg-primary text-on-primary font-bold rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined">verified_user</span>
+                                Autorizar Ingreso
+                            </button>
+</div>
+</form>
+</div>
+<!-- Security Monitor Widget (Asymmetric Visual) -->
+<div class="col-span-12 xl:col-span-8 space-y-gutter">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bg-primary-container text-on-primary-fixed rounded-xl p-6 relative overflow-hidden h-40">
+<div class="relative z-10">
+<p class="text-label-caps text-on-primary-container mb-2">Estado del Complejo</p>
+<h4 class="font-headline-md text-white">Nivel de Alerta: Normal</h4>
+<div class="mt-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-green-400">shield_with_heart</span>
+<span class="text-body-sm text-on-primary-container">Todas las puertas perimetrales cerradas</span>
+</div>
+</div>
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-[120px] opacity-10">policy</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/10 rounded-xl p-6 h-40 flex items-center gap-6">
+<div class="w-20 h-20 rounded-full border-4 border-primary/10 flex items-center justify-center">
+<span class="text-headline-md font-bold text-primary">84%</span>
+</div>
+<div>
+<h4 class="text-body-md font-bold">Capacidad Parqueadero</h4>
+<p class="text-body-sm text-on-surface-variant">5 de 32 espacios de visitantes disponibles actualmente.</p>
+</div>
+</div>
+</div>
+<!-- Clean History Table -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/10 overflow-hidden">
+<div class="px-6 py-4 border-b border-outline-variant/10 flex justify-between items-center bg-surface-container-low/30">
+<h3 class="font-bold text-body-md">Historial de Accesos Recientes</h3>
+<button class="text-primary text-body-sm font-bold flex items-center gap-1">
+                                Ver todo
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-[#F8FAFC]">
+<tr>
+<th class="px-6 py-4 text-label-caps text-on-surface-variant">Visitante</th>
+<th class="px-6 py-4 text-label-caps text-on-surface-variant">Apartamento</th>
+<th class="px-6 py-4 text-label-caps text-on-surface-variant">Vehículo</th>
+<th class="px-6 py-4 text-label-caps text-on-surface-variant">Entrada</th>
+<th class="px-6 py-4 text-label-caps text-on-surface-variant">Salida</th>
+<th class="px-6 py-4 text-label-caps text-on-surface-variant">Estado</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#F1F5F9]">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container text-xs font-bold">JD</div>
+<span class="text-body-sm font-medium">Juan Delgado</span>
+</div>
+</td>
+<td class="px-6 py-4 text-body-sm">Torre A, 402</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-surface-container rounded font-mono text-[11px] font-bold">GTR-442</span>
+</td>
+<td class="px-6 py-4 text-body-sm text-on-surface-variant">08:45 AM</td>
+<td class="px-6 py-4 text-body-sm text-on-surface-variant">--:--</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-[11px] font-bold uppercase tracking-wider">Dentro</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container text-xs font-bold">MA</div>
+<span class="text-body-sm font-medium">Marta Arenas</span>
+</div>
+</td>
+<td class="px-6 py-4 text-body-sm">Torre C, 1102</td>
+<td class="px-6 py-4">
+<span class="text-body-sm text-on-surface-variant italic">Peatonal</span>
+</td>
+<td class="px-6 py-4 text-body-sm text-on-surface-variant">07:20 AM</td>
+<td class="px-6 py-4 text-body-sm text-on-surface-variant">09:15 AM</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full text-[11px] font-bold uppercase tracking-wider">Salida</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container text-xs font-bold">LC</div>
+<span class="text-body-sm font-medium">Luis Castro</span>
+</div>
+</td>
+<td class="px-6 py-4 text-body-sm">Torre B, 204</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-surface-container rounded font-mono text-[11px] font-bold">HHB-109</span>
+</td>
+<td class="px-6 py-4 text-body-sm text-on-surface-variant">06:10 AM</td>
+<td class="px-6 py-4 text-body-sm text-on-surface-variant">--:--</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-[11px] font-bold uppercase tracking-wider">Dentro</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container text-xs font-bold">SP</div>
+<span class="text-body-sm font-medium">Sergio Peña</span>
+</div>
+</td>
+<td class="px-6 py-4 text-body-sm">Torre A, 501</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-surface-container rounded font-mono text-[11px] font-bold">XYZ-987</span>
+</td>
+<td class="px-6 py-4 text-body-sm text-on-surface-variant">05:30 AM</td>
+<td class="px-6 py-4 text-body-sm text-on-surface-variant">08:05 AM</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full text-[11px] font-bold uppercase tracking-wider">Salida</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<!-- Contextual Map / Visualization Section -->
+<section class="mt-lg">
+<div class="bg-surface-container-highest rounded-2xl overflow-hidden relative h-64 shadow-inner border border-outline-variant/10">
+<img class="w-full h-full object-cover grayscale brightness-50 opacity-40" data-alt="A detailed architectural visualization of a modern luxury condominium complex plan, viewed from a high-angle drone perspective. The rendering highlights sophisticated geometric landscaping, private access roads with security gatehouses, and sleek glass-fronted towers. The lighting is early morning soft gold, creating a calm and secure atmosphere that reflects the premium minimalist design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOJo4lZr2LsydVeIrgzJpBif7oIUPBnGyeflsymgnzIuoHBLGS2Q8mTllwDS4iPhDZglc2oWkpOErhiEClUrmXrDYHAthBkEZfiKohKpKUW04M1PacwaSP2sHFADXln2EHPtmBCxOU3y1fJExMqzdPx-eUfn_Y807u74aXUkoBjHyFaEHUUYbO3vQJVEO7Rs6i84yZaMlS-MyMtarGg7vIzSnUb7iDubnY5hfSP1rJa3JXm4hbQ7cCyTQmxY0QFUzuzGA9A29UDgg"/>
+<div class="absolute inset-0 p-8 flex flex-col justify-center">
+<div class="flex items-start justify-between">
+<div class="bg-white/90 backdrop-blur-md p-6 rounded-xl max-w-sm shadow-xl">
+<h4 class="font-bold text-headline-sm mb-2 text-primary">Vista de Mapa de Accesos</h4>
+<p class="text-body-sm text-on-surface-variant">Monitoreo activo de los 3 puntos de entrada perimetrales. Sensores biométricos operativos en Portería Central.</p>
+<button class="mt-4 px-4 py-2 bg-primary text-on-primary rounded-lg text-body-sm font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">visibility</span>
+                                    Abrir CCTV Live
+                                </button>
+</div>
+<div class="flex flex-col gap-2">
+<div class="bg-black/60 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-green-400"></span>
+<span class="text-white text-[10px] font-bold uppercase tracking-widest">Puerta Principal: Abierta</span>
+</div>
+<div class="bg-black/60 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-green-400"></span>
+<span class="text-white text-[10px] font-bold uppercase tracking-widest">Sótano 1: Activo</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- FAB Action (Contextual Suppression applies if details but here it's main dashboard for visitors) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined text-3xl">emergency</span>
+</button>
+</body></html>

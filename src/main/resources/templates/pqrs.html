@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#0d1c2f",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#131b2e",
+                        "surface": "#f8f9ff",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "primary-fixed": "#dae2fd",
+                        "background": "#f8f9ff",
+                        "on-surface-variant": "#45464d",
+                        "on-surface": "#0b1c30",
+                        "surface-tint": "#565e74",
+                        "tertiary-fixed": "#e0e3e5",
+                        "surface-variant": "#d3e4fe",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#7c839b",
+                        "secondary-fixed-dim": "#b9c7e0",
+                        "surface-container": "#e5eeff",
+                        "outline-variant": "#c6c6cd",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#191c1e",
+                        "primary-container": "#131b2e",
+                        "primary": "#000000",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "secondary": "#515f74",
+                        "on-tertiary-fixed": "#191c1e",
+                        "secondary-fixed": "#d5e3fd",
+                        "error": "#ba1a1a",
+                        "tertiary": "#000000",
+                        "on-tertiary-container": "#818486",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#3a485c",
+                        "primary-fixed-dim": "#bec6e0",
+                        "surface-container-low": "#eff4ff",
+                        "inverse-primary": "#bec6e0",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "surface-container-high": "#dce9ff",
+                        "secondary-container": "#d5e3fd",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#57657b",
+                        "outline": "#76777d",
+                        "surface-dim": "#cbdbf5",
+                        "inverse-surface": "#213145"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "0.5rem",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px",
+                        "xl": "4rem",
+                        "sm": "1rem",
+                        "md": "1.5rem",
+                        "lg": "2.5rem",
+                        "gutter": "24px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Manrope"],
+                        "display-xl": ["Manrope"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.25", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f8f9ff;
+            color: #0b1c30;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-screen w-72 flex flex-col bg-surface-container shadow-sm z-50">
+<div class="px-8 py-10">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface">CondoPro</h1>
+<p class="text-on-surface-variant font-body-sm">Management Portal</p>
+</div>
+<nav class="flex flex-col gap-1 py-6 flex-grow">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg mx-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg mx-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Users</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg mx-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">apartment</span>
+<span>Apartments</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg mx-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span>Payments</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg mx-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">person_add</span>
+<span>Visitors</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg mx-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">event_seat</span>
+<span>Amenities</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary text-on-primary rounded-lg mx-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+<span>Tickets</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg mx-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="p-6">
+<button class="w-full bg-primary text-on-primary py-3 rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined">add</span>
+                New Request
+            </button>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="ml-72 flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full h-16 flex items-center justify-between px-margin-desktop bg-surface border-b border-outline-variant/30 z-40">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full text-body-sm focus:ring-1 focus:ring-primary" placeholder="Search tickets, residents..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-container rounded-full transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 hover:bg-surface-container rounded-full transition-all">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<button class="p-2 hover:bg-surface-container rounded-full transition-all">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-surface-container-high ml-2 overflow-hidden border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of a condominium manager with a confident and friendly expression. The background is a brightly lit, modern office with soft architectural lines and a minimalist aesthetic. High-end professional lighting creates a trustworthy and corporate atmosphere in shades of cool blue and crisp white." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC328lwdZBnV_gDYaFYDY7Bap1fRZNKTs2pfqw-UoDY9dM8Zyk2pd2qFGxmqCaHh6nCuDTGbR8c-0OmyjpDJtLSRCgcgut_qmu4ENMqNv10HN7a8e9FkmTRXePJ2CU2RakLakvwf7_qYb_Nm-lq30Jx7viA4pqCfGCqfLJHEZjuObKHjAH2Ici-gWZd_JXNM4bqCBoivTdN1IR_0khtJUniJcJ5FmFTGyJBzfj5cwE7aldN721wJUvjXHFL93VfyQVZIVwTFuAEidA"/>
+</div>
+</div>
+</header>
+<!-- Page Canvas -->
+<main class="p-margin-desktop flex-grow">
+<div class="mb-lg flex justify-between items-end">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Ticket Center (PQRS)</h2>
+<p class="text-on-surface-variant mt-1">Manage and track community requests, complaints, and suggestions.</p>
+</div>
+<div class="flex gap-3">
+<div class="bg-surface-container px-4 py-2 rounded-lg flex items-center gap-2 border border-outline-variant/20">
+<span class="text-body-sm font-medium">Total Open: <span class="font-bold text-primary">24</span></span>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="bento-grid">
+<!-- New PQRS Form Card -->
+<section class="col-span-12 lg:col-span-4 bg-surface-container-lowest p-8 rounded-xl shadow-[0_4px_12px_rgba(15,23,42,0.04)] border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">edit_document</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Create Ticket</h3>
+</div>
+<form class="space-y-5">
+<div class="space-y-2">
+<label class="text-label-caps text-on-surface-variant">Request Type</label>
+<select class="w-full bg-surface-container-low border-outline-variant/30 rounded-lg py-3 px-4 focus:ring-primary focus:border-primary transition-all">
+<option>Suggestion (Sugerencia)</option>
+<option>Petition (Petición)</option>
+<option>Complaint (Queja)</option>
+<option>Claim (Reclamo)</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-label-caps text-on-surface-variant">Subject</label>
+<input class="w-full bg-surface-container-low border-outline-variant/30 rounded-lg py-3 px-4 focus:ring-primary transition-all" placeholder="Brief summary of the issue" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-label-caps text-on-surface-variant">Description</label>
+<textarea class="w-full bg-surface-container-low border-outline-variant/30 rounded-lg py-3 px-4 focus:ring-primary transition-all" placeholder="Detailed explanation..." rows="4"></textarea>
+</div>
+<div class="pt-4">
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:shadow-lg transition-all active:scale-[0.98]" type="submit">
+                                Submit Ticket
+                            </button>
+</div>
+</form>
+</section>
+<!-- Status Tabs & Ticket List -->
+<section class="col-span-12 lg:col-span-8 space-y-6">
+<!-- Filters & Stats -->
+<div class="flex flex-wrap items-center gap-4 bg-surface-container-low p-2 rounded-xl border border-outline-variant/20">
+<button class="flex-1 px-4 py-3 rounded-lg bg-surface-container-lowest shadow-sm text-primary font-bold transition-all">
+                            All Tickets
+                        </button>
+<button class="flex-1 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all">
+                            Pending
+                        </button>
+<button class="flex-1 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all">
+                            In Progress
+                        </button>
+<button class="flex-1 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all">
+                            Resolved
+                        </button>
+</div>
+<!-- Ticket Feed -->
+<div class="space-y-4">
+<!-- Ticket Card: Pending -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-[0_4px_12px_rgba(15,23,42,0.04)] group hover:border-primary/20 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-error-container text-on-error-container text-label-caps rounded-full">Pending</span>
+<span class="text-body-sm text-on-surface-variant">#TKT-4892</span>
+</div>
+<span class="text-body-sm text-on-surface-variant">2 hours ago</span>
+</div>
+<h4 class="font-headline-md text-body-lg font-bold mb-2">Elevator Maintenance - Tower B</h4>
+<p class="text-body-md text-on-surface-variant line-clamp-2">The main elevator in Tower B is making strange noises and stopping abruptly between the 4th and 5th floors.</p>
+<div class="mt-6 pt-6 border-t border-outline-variant/10 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="h-6 w-6 rounded-full bg-secondary-fixed flex items-center justify-center text-[10px] font-bold">JD</div>
+<span class="text-body-sm font-medium">Juan Delgado (Apt 402)</span>
+</div>
+<button class="text-primary font-bold text-body-sm flex items-center gap-1 hover:underline">
+                                    View Details <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Ticket Card: In Progress -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-[0_4px_12px_rgba(15,23,42,0.04)] group hover:border-primary/20 transition-all">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-primary-fixed text-primary text-label-caps rounded-full">In Progress</span>
+<span class="text-body-sm text-on-surface-variant">#TKT-4885</span>
+</div>
+<span class="text-body-sm text-on-surface-variant">Yesterday</span>
+</div>
+<h4 class="font-headline-md text-body-lg font-bold mb-2">Gym Equipment Repair</h4>
+<p class="text-body-md text-on-surface-variant line-clamp-2">One of the treadmills is out of order. Need a technician to check the belt tension and electronics.</p>
+<div class="mt-6 pt-6 border-t border-outline-variant/10 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="h-6 w-6 rounded-full bg-tertiary-fixed flex items-center justify-center text-[10px] font-bold">MS</div>
+<span class="text-body-sm font-medium">Maria Suarez (Apt 1205)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-body-sm italic text-on-tertiary-container">Assigned: Maintenance Team</span>
+<button class="text-primary font-bold text-body-sm flex items-center gap-1 hover:underline">
+                                        Update <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Ticket Card: Resolved -->
+<div class="bg-surface-container-low/50 p-6 rounded-xl border border-outline-variant/10 group transition-all opacity-75">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant text-label-caps rounded-full">Resolved</span>
+<span class="text-body-sm text-on-surface-variant">#TKT-4871</span>
+</div>
+<span class="text-body-sm text-on-surface-variant">3 days ago</span>
+</div>
+<h4 class="font-headline-md text-body-lg font-bold mb-2">New Garden Bench Suggestion</h4>
+<p class="text-body-md text-on-surface-variant line-clamp-2">Residents would appreciate more seating areas in the north garden near the fountain.</p>
+<div class="mt-6 pt-6 border-t border-outline-variant/10 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="h-6 w-6 rounded-full bg-secondary-container flex items-center justify-center text-[10px] font-bold">RC</div>
+<span class="text-body-sm font-medium">Roberto Castro (Apt 201)</span>
+</div>
+<span class="text-body-sm text-on-surface-variant italic">Outcome: Approved for Q3</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Analytics Section -->
+<section class="col-span-12 bg-primary-container text-on-primary-container p-8 rounded-2xl flex flex-wrap gap-12 items-center justify-between">
+<div class="flex items-center gap-6">
+<div class="w-16 h-16 rounded-full bg-on-primary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px]">analytics</span>
+</div>
+<div>
+<h3 class="font-headline-md text-on-primary-fixed">Response Efficiency</h3>
+<p class="opacity-70">Average resolution time: 18 hours</p>
+</div>
+</div>
+<div class="flex gap-8">
+<div class="text-center">
+<div class="text-headline-lg font-bold">94%</div>
+<div class="text-label-caps opacity-60">Satisfaction</div>
+</div>
+<div class="text-center border-l border-on-primary-container/20 pl-8">
+<div class="text-headline-lg font-bold">12</div>
+<div class="text-label-caps opacity-60">Today's Closure</div>
+</div>
+</div>
+<button class="bg-surface-container-lowest text-primary px-8 py-3 rounded-xl font-bold hover:scale-105 transition-all">
+                        Download Report
+                    </button>
+</section>
+</div>
+</main>
+</div>
+<!-- Floating Action Button (FAB) -->
+<button class="fixed bottom-margin-desktop right-margin-desktop w-16 h-16 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined text-[32px]">add</span>
+</button>
+</body></html>

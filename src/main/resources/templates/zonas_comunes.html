@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed": "#0d1c2f",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed": "#131b2e",
+                      "surface": "#f8f9ff",
+                      "on-tertiary-fixed-variant": "#444749",
+                      "primary-fixed": "#dae2fd",
+                      "background": "#f8f9ff",
+                      "on-surface-variant": "#45464d",
+                      "on-surface": "#0b1c30",
+                      "surface-tint": "#565e74",
+                      "tertiary-fixed": "#e0e3e5",
+                      "surface-variant": "#d3e4fe",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-container": "#7c839b",
+                      "secondary-fixed-dim": "#b9c7e0",
+                      "surface-container": "#e5eeff",
+                      "outline-variant": "#c6c6cd",
+                      "on-error-container": "#93000a",
+                      "tertiary-container": "#191c1e",
+                      "primary-container": "#131b2e",
+                      "primary": "#000000",
+                      "surface-bright": "#f8f9ff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "on-background": "#0b1c30",
+                      "secondary": "#515f74",
+                      "on-tertiary-fixed": "#191c1e",
+                      "secondary-fixed": "#d5e3fd",
+                      "error": "#ba1a1a",
+                      "tertiary": "#000000",
+                      "on-tertiary-container": "#818486",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed-variant": "#3a485c",
+                      "primary-fixed-dim": "#bec6e0",
+                      "surface-container-low": "#eff4ff",
+                      "inverse-primary": "#bec6e0",
+                      "tertiary-fixed-dim": "#c4c7c9",
+                      "surface-container-high": "#dce9ff",
+                      "secondary-container": "#d5e3fd",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "surface-container-highest": "#d3e4fe",
+                      "on-error": "#ffffff",
+                      "on-secondary-container": "#57657b",
+                      "outline": "#76777d",
+                      "surface-dim": "#cbdbf5",
+                      "inverse-surface": "#213145"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xs": "0.5rem",
+                      "margin-mobile": "16px",
+                      "margin-desktop": "32px",
+                      "xl": "4rem",
+                      "sm": "1rem",
+                      "md": "1.5rem",
+                      "lg": "2.5rem",
+                      "gutter": "24px",
+                      "base": "4px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Manrope"],
+                      "display-xl": ["Manrope"],
+                      "body-sm": ["Inter"],
+                      "headline-md": ["Manrope"],
+                      "body-lg": ["Inter"],
+                      "label-caps": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "1.25", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "display-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-screen w-72 flex flex-col bg-surface-container dark:bg-surface-container-low shadow-sm dark:shadow-none z-50">
+<div class="px-8 py-10">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-surface">CondoPro</h1>
+<p class="text-body-sm text-on-surface-variant">Management Portal</p>
+</div>
+<nav class="flex flex-col gap-1 py-6 flex-grow overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg mx-4 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg mx-4 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-body-md text-body-md font-medium">Users</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg mx-4 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">apartment</span>
+<span class="font-body-md text-body-md font-medium">Apartments</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg mx-4 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-body-md text-body-md font-medium">Payments</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg mx-4 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">person_add</span>
+<span class="font-body-md text-body-md font-medium">Visitors</span>
+</a>
+<!-- Active State: Amenities -->
+<a class="flex items-center gap-3 px-4 py-3 bg-primary dark:bg-primary-fixed text-on-primary dark:text-on-primary-fixed rounded-lg mx-4 transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">event_seat</span>
+<span class="font-body-md text-body-md font-medium">Amenities</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg mx-4 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span class="font-body-md text-body-md font-medium">Tickets</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-lg mx-4 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md text-body-md font-medium">Settings</span>
+</a>
+</nav>
+<div class="p-6">
+<button class="w-full bg-primary-container text-on-primary text-white py-3 rounded-xl font-medium flex items-center justify-center gap-2 hover:bg-black transition-all">
+<span class="material-symbols-outlined">add</span>
+                New Request
+            </button>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full h-16 flex items-center z-40 bg-surface dark:bg-surface-dim border-b border-outline-variant/30 ml-72 justify-between px-margin-desktop">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full focus:ring-2 focus:ring-primary/20 text-body-sm transition-all" placeholder="Search amenities, dates, residents..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-container dark:hover:bg-surface-container-high rounded-full transition-all text-on-surface-variant">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 hover:bg-surface-container dark:hover:bg-surface-container-high rounded-full transition-all text-on-surface-variant">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<button class="p-2 hover:bg-surface-container dark:hover:bg-surface-container-high rounded-full transition-all text-on-surface-variant">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden lg:block">
+<p class="text-body-sm font-semibold">Carlos Mendez</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider">Property Manager</p>
+</div>
+<img alt="Manager Avatar" class="w-10 h-10 rounded-full object-cover border-2 border-surface-container" data-alt="A professional headshot of a Hispanic property manager in a well-lit modern office setting. He is wearing a sharp charcoal suit and a light blue shirt, looking approachable and confident. The background shows blurred architectural elements and lush indoor plants, reinforcing a premium, high-trust corporate atmosphere with soft, natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTMRSz1p5t8qE4MGqQvB1luegqFPjetI80x7gHqTLG0-jm3zrglqsgsSGVZ8ivGipmSfveQdj0glPavpQq969xl5OJmVyuCjeRtrvCbDpo8Qr4ElD6eeMMzNVyKS8eNl_FRKmR6g3gT1OjUqVMfdeJjV-RQfYioyqDMcUW7_hqejZLjSXs5dRGLwO-dXv-aTod3zdf59EC4QXttvO5h0tcvXczZHBSGnF0PD48ZwbMA-0SrDE-x-psG3AeA-QJ1PwGrNkvzeHn1pQ"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-72 p-margin-desktop max-w-[1440px]">
+<!-- Page Header -->
+<div class="flex justify-between items-end mb-10">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-extrabold mb-2">Reserva de Zonas Comunes</h2>
+<p class="text-body-lg text-on-surface-variant">Gestiona y coordina el uso de las instalaciones del condominio de manera eficiente.</p>
+</div>
+<div class="flex gap-3">
+<div class="flex items-center gap-2 bg-surface-container px-4 py-2 rounded-full border border-outline-variant/20">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+<span class="text-body-sm font-medium">84% Disponibilidad Hoy</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Left: Amenity Selection (Bento Grid Style) -->
+<div class="col-span-12 lg:col-span-7 flex flex-col gap-gutter">
+<h3 class="font-headline-md text-headline-md text-on-surface">Selecciona una Zona</h3>
+<div class="grid grid-cols-2 gap-6">
+<!-- Amenity Card: Pool -->
+<button class="relative group col-span-2 md:col-span-1 bg-surface-container-lowest p-6 rounded-2xl shadow-[0px_4px_12px_rgba(15,23,42,0.04)] border-2 border-transparent hover:border-primary transition-all text-left overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 -mr-8 -mt-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Close-up of crystal clear turquoise swimming pool water with gentle ripples reflecting bright sunlight. The aesthetic is serene and luxurious, with a minimalist vibe, focusing on texture and light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlY5aI8Et3yHw3dghmS8bSD1_fFh0VagzBmacZ5wRsQBdf6AlxHSflA-GpUMTsguYePdEOxNXgmJa4TVOT4CfTUvu4I07RlhkxVTF20P7psCCsYoTwLJXtpFPafCWVsCdaNSPsntqIrpHpoCuF281r-Jotcr9gMS-QusfCFVqD-Ax5Lfxr--9EBjJyaEj0POCFuElPau-ac0Fg6bVNKu3hT9uip_9rzF6akVtTr4Nlq0IvPrk-JCsugHIY8u8VcgYl5qTyDcZXkcU"/>
+</div>
+<div class="mb-4 w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">pool</span>
+</div>
+<h4 class="text-body-lg font-bold mb-1">Piscina Infinity</h4>
+<p class="text-body-sm text-on-surface-variant mb-4">Capacidad: 25 personas</p>
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 bg-green-100 text-green-700 text-[10px] font-bold rounded-full uppercase">Disponible</span>
+</div>
+</button>
+<!-- Amenity Card: Gym -->
+<button class="relative group md:col-span-1 bg-surface-container-lowest p-6 rounded-2xl shadow-[0px_4px_12px_rgba(15,23,42,0.04)] border-2 border-primary transition-all text-left overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 -mr-8 -mt-8 opacity-10">
+<img class="w-full h-full object-cover" data-alt="Modern high-end gym equipment in a minimalist industrial space. Features clean lines, dark metallic finishes, and soft ambient lighting that highlights the precision of the fitness machines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq5eQzdljHOscEXNZlQicSoh15nUqPxYHVDb5cJdk8ARwNnvYyeb-tjViwbCz4dEmCNkbWqgGt7nkXxHs3y5fmwRgL-BBLVjt6-h-bm6s62I_uwPkW6pR-8pSu_hx9B05MC98wQFUTPSqaIyPODFgLLObcMBPn9bPIFdLo6XK5DCBSTAMMsHLjpvPzvvK3Z8AKDbVujVR2FGwLMbuIvVdYkY4hx3WJr5bE5uSvvHr7UaDmgxOr3kwRv5BxwprJT4CziETjOI6VApc"/>
+</div>
+<div class="mb-4 w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">fitness_center</span>
+</div>
+<h4 class="text-body-lg font-bold mb-1">Gimnasio Pro</h4>
+<p class="text-body-sm text-on-surface-variant mb-4">Capacidad: 10 personas</p>
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 bg-primary text-on-primary text-[10px] font-bold rounded-full uppercase">Seleccionado</span>
+</div>
+</button>
+<!-- Amenity Card: Social Room -->
+<button class="relative group col-span-2 bg-surface-container-lowest p-6 rounded-2xl shadow-[0px_4px_12px_rgba(15,23,42,0.04)] border-2 border-transparent hover:border-primary transition-all text-left flex items-center gap-6 overflow-hidden">
+<div class="w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Sophisticated lounge interior with velvet seating, minimalist decor, and warm designer lighting. The atmosphere is elegant and exclusive, perfect for high-end social gatherings." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo8VMcuKRiTJ7BsUz-JOj_1vNOtyXYtF2_91jM58a62w1D-izhjLJ3Ft_XkZ0qFYl6X2cZMNsdb38JV2fdhAQdsUFw8bCJm8OTqKNi5QmDmlMca7_p4PvkkmfrIc520YPS-LsK6mg5Ftzcv6zTj14wbPdhYp57WjAJipLXNAbqihh-8mC1m5qyui9OLK1ODHmeCUB7AJ0zjv6qqIHWH7ixKctf376r07cQOTy1OXHqyWX8uJ9Q5GYabDl9viLIbAIX96-KwELGFSs"/>
+</div>
+<div class="flex-grow">
+<div class="mb-2 w-10 h-10 bg-primary/5 rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<h4 class="text-body-lg font-bold mb-1">Salón Social Premium</h4>
+<p class="text-body-sm text-on-surface-variant">Capacidad: 50 personas • Equipado con Sonido &amp; Bar</p>
+</div>
+<div class="pr-4">
+<span class="px-3 py-1 bg-yellow-100 text-yellow-700 text-[10px] font-bold rounded-full uppercase">Alta Demanda</span>
+</div>
+</button>
+</div>
+<!-- Availability Schedule -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-[0px_4px_12px_rgba(15,23,42,0.04)] mt-4">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface">Horarios Disponibles</h3>
+<p class="text-body-sm text-on-surface-variant">Gimnasio Pro • Jueves, 24 Oct</p>
+</div>
+<div class="grid grid-cols-4 gap-3">
+<button class="p-3 border border-outline-variant/30 rounded-xl hover:bg-primary hover:text-white transition-all text-center">
+<span class="block font-bold">06:00</span>
+<span class="text-[10px] opacity-70">3 Libres</span>
+</button>
+<button class="p-3 border border-outline-variant/30 rounded-xl hover:bg-primary hover:text-white transition-all text-center">
+<span class="block font-bold">08:00</span>
+<span class="text-[10px] opacity-70">1 Libre</span>
+</button>
+<button class="p-3 bg-primary text-white rounded-xl text-center shadow-lg">
+<span class="block font-bold">10:00</span>
+<span class="text-[10px] opacity-70">Seleccionado</span>
+</button>
+<button class="p-3 border border-outline-variant/30 rounded-xl opacity-40 cursor-not-allowed bg-surface-container text-center">
+<span class="block font-bold">12:00</span>
+<span class="text-[10px]">Agotado</span>
+</button>
+<button class="p-3 border border-outline-variant/30 rounded-xl hover:bg-primary hover:text-white transition-all text-center">
+<span class="block font-bold">14:00</span>
+<span class="text-[10px] opacity-70">8 Libres</span>
+</button>
+<button class="p-3 border border-outline-variant/30 rounded-xl hover:bg-primary hover:text-white transition-all text-center">
+<span class="block font-bold">16:00</span>
+<span class="text-[10px] opacity-70">5 Libres</span>
+</button>
+<button class="p-3 border border-outline-variant/30 rounded-xl hover:bg-primary hover:text-white transition-all text-center">
+<span class="block font-bold">18:00</span>
+<span class="text-[10px] opacity-70">2 Libres</span>
+</button>
+<button class="p-3 border border-outline-variant/30 rounded-xl hover:bg-primary hover:text-white transition-all text-center">
+<span class="block font-bold">20:00</span>
+<span class="text-[10px] opacity-70">6 Libres</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right: Calendar & Summary -->
+<div class="col-span-12 lg:col-span-5 flex flex-col gap-gutter">
+<!-- Calendar Card -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-[0px_24px_48px_rgba(15,23,42,0.08)]">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-headline-md text-headline-md">Octubre 2024</h3>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-surface-container rounded-full"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="p-2 hover:bg-surface-container rounded-full"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-2 text-center mb-4">
+<span class="text-label-caps text-on-surface-variant">L</span>
+<span class="text-label-caps text-on-surface-variant">M</span>
+<span class="text-label-caps text-on-surface-variant">M</span>
+<span class="text-label-caps text-on-surface-variant">J</span>
+<span class="text-label-caps text-on-surface-variant">V</span>
+<span class="text-label-caps text-on-surface-variant text-error">S</span>
+<span class="text-label-caps text-on-surface-variant text-error">D</span>
+</div>
+<div class="grid grid-cols-7 gap-2">
+<!-- Days -->
+<span class="h-10 flex items-center justify-center text-on-surface-variant/30">30</span>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">1</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">2</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">3</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">4</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">5</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">6</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">7</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">8</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">9</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">10</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">11</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">12</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">13</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">14</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">15</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">16</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">17</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">18</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">19</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">20</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">21</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">22</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">23</button>
+<!-- Selected Day -->
+<button class="h-10 flex items-center justify-center bg-primary text-white rounded-lg font-bold shadow-md">24</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">25</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">26</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">27</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">28</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">29</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">30</button>
+<button class="h-10 flex items-center justify-center hover:bg-primary/5 rounded-lg transition-all">31</button>
+</div>
+</div>
+<!-- Reservation Summary -->
+<div class="bg-primary text-white p-8 rounded-2xl shadow-[0px_24px_48px_rgba(0,0,0,0.15)] flex flex-col gap-6">
+<h3 class="font-headline-md text-headline-md border-b border-white/10 pb-4">Resumen de Reserva</h3>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">fitness_center</span>
+</div>
+<div>
+<p class="text-[10px] uppercase opacity-60 font-bold tracking-widest">Instalación</p>
+<p class="font-medium">Gimnasio Pro - Torre B</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">calendar_today</span>
+</div>
+<div>
+<p class="text-[10px] uppercase opacity-60 font-bold tracking-widest">Fecha y Hora</p>
+<p class="font-medium">Jueves, 24 de Octubre • 10:00 AM</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<p class="text-[10px] uppercase opacity-60 font-bold tracking-widest">Reserva a nombre de</p>
+<p class="font-medium">Apt 402 - Familia Mendez</p>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-white/10 mt-2">
+<button class="w-full bg-white text-primary py-4 rounded-xl font-bold flex items-center justify-center gap-3 hover:bg-on-secondary-fixed hover:text-white transition-all active:scale-[0.98]">
+                            Confirmar Reserva
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<p class="text-center text-[10px] opacity-40 mt-4 italic">Al confirmar, aceptas las normas de convivencia y uso de zonas comunes.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Activity / Rules Section -->
+<div class="mt-12">
+<h3 class="font-headline-md text-headline-md mb-6">Mis Próximas Reservas</h3>
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0px_4px_12px_rgba(15,23,42,0.04)]">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low">
+<tr>
+<th class="px-8 py-4 text-label-caps text-on-surface-variant">Instalación</th>
+<th class="px-8 py-4 text-label-caps text-on-surface-variant">Fecha</th>
+<th class="px-8 py-4 text-label-caps text-on-surface-variant">Estado</th>
+<th class="px-8 py-4 text-label-caps text-on-surface-variant">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-8 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">pool</span>
+<span class="font-medium">Piscina Infinity</span>
+</div>
+</td>
+<td class="px-8 py-4 text-on-surface-variant">Mañana, 16:00 - 18:00</td>
+<td class="px-8 py-4">
+<span class="px-3 py-1 bg-green-100 text-green-700 text-[10px] font-bold rounded-full uppercase">Confirmada</span>
+</td>
+<td class="px-8 py-4">
+<button class="text-primary font-bold text-body-sm hover:underline">Cancelar</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-8 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">groups</span>
+<span class="font-medium">Salón Social Premium</span>
+</div>
+</td>
+<td class="px-8 py-4 text-on-surface-variant">30 Octubre, 19:00 - 23:00</td>
+<td class="px-8 py-4">
+<span class="px-3 py-1 bg-blue-100 text-blue-700 text-[10px] font-bold rounded-full uppercase">Pendiente Pago</span>
+</td>
+<td class="px-8 py-4">
+<button class="text-primary font-bold text-body-sm hover:underline">Pagar ahora</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+</body></html>
